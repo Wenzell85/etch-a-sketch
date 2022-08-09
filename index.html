@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!--<script type="javascript" src="code.js"></script>-->
+    <title>Etch-a-sketch</title>
+</head>
+<body>
+
+    <button>Dimensions</button>
+
+    <div class="container"></div>
+
+    <script>
+
+        //create container object
+
+        let main = document.querySelector('.container'); 
+        
+        let butt = document.querySelector('button');
+        butt.addEventListener('click', function(){   
+
+           
+
+            let size = +prompt("Enter drawing dimensions between 1 and 100: ");
+
+            (size > 100)? size = 100 : size = size;
+
+            window.onload = createBlocks(size);
+        })       
+        
+
+
+        function createBlocks(size){
+
+            for(let i = 0; i < size; i++){
+
+                let xBlock = document.createElement('div');
+                xBlock.classList.add('xCube');
+                main.appendChild(xBlock);
+
+                for(let j = 0; j < size; j++){
+
+                    let yBlock = document.createElement('div');
+                    yBlock.classList.add('yCube');
+                    xBlock.appendChild(yBlock);
+                    yBlock.addEventListener('mouseover', function(){
+                        let red = Math.floor(Math.random()*256), 
+                        green = Math.floor(Math.random()*256);  blue = Math.floor(Math.random()*256);
+                        this.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+                    })
+                }
+
+
+            }
+
+            
+        }        
+
+        
+
+
+
+
+
+        
+
+        
+
+    </script>
+    
+</body>
+</html>

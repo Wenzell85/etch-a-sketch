@@ -1,0 +1,36 @@
+*{box-sizing: border-box;}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+}
+
+.container{
+    background-color:slategrey;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.xCube{
+    /*border: 1px solid green;*/
+    display: Flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex: 1;
+}
+
+.yCube{
+    flex-grow: 1;
+    flex: 1;
+    /*border: 0.1px solid green;*/
+}
+
+/*.color{
+    background-color: black;
+}*/
+
